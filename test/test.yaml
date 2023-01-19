@@ -3,20 +3,16 @@ kind: Deployment
 metadata:
   name: nginx-deployment-test
   labels:
-    app: yaspirin
-    app.kubernetes.io/component: deployment.yada-tst
-    app.kubernetes.io/instance: yada-test-2
-    app.kubernetes.io/name: yada-test-2
-    yada/component: yada-test
+    yada: yada-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      yada/component: yada-test
+      yada: yada-test
   template:
     metadata:
       labels:
-        yada/component: yada-test
+        yada: yada-test
     spec:
       containers:
       - name: nginx
