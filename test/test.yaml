@@ -7,13 +7,12 @@ metadata:
     app.kubernetes.io/component: deployment.yada-tst
     app.kubernetes.io/instance: yada-test-2
     app.kubernetes.io/name: yada-test-2
-    yada/component: yada
+    yada/component: yada-test
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: yaspirin
-      yada/component: yada
+      yada/component: yada-test
   template:
     metadata:
       labels:
