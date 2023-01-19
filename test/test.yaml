@@ -1,28 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "15"
+  name: nginx-deployment
   labels:
     app: yaspirin
     app.kubernetes.io/component: deployment.yada-tst
     app.kubernetes.io/instance: yada-test-2
     app.kubernetes.io/name: yada-test-2
     yada/component: yada
-  name: yada-tst
-  namespace: yad-nonprod
 spec:
-  replicas: 1
-  revisionHistoryLimit: 5
+  replicas: 3
   selector:
     matchLabels:
       app: yaspirin
       yada/component: yada
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -33,5 +24,7 @@ spec:
         yada/component: yada
     spec:
       containers:
+      - name: nginx
         image: nginx:stable
-        name: yada
+        ports:
+        - containerPort: 80
