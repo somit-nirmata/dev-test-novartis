@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    app: yaspirin
+    app: dev
     app.kubernetes.io/component: deployment.yada
     app.kubernetes.io/instance: yada-dev
     app.kubernetes.io/name: yada-dev
@@ -12,8 +12,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: yaspirin
-      yada/component: yada
+      app: dev
   template:
     metadata:
       labels:
