@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: yaspirin
+        app: dev
         app.kubernetes.io/component: deployment.yada
         app.kubernetes.io/instance: yada-dev
         app.kubernetes.io/name: yada-dev
