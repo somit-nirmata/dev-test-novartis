@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: nginx-deployment-test
   labels:
-    yada: yada-test
+    app: dev
 spec:
   replicas: 2
   selector:
     matchLabels:
-      yada: yada-test
+      app: dev
   template:
     metadata:
       labels:
-        yada: yada-test
+        app: dev
     spec:
       containers:
       - name: nginx
